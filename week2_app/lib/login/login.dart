@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:week2_app/login/Register.dart';
 
-class Login extends StatelessWidget {
+class LoginApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 

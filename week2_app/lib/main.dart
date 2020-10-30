@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      //home: MyHomePage(title: 'Login Submission Flutter'),
-      home: Login(),
+      home: MyHomePage(title: 'Submission Flutter Udacoding'),
+      //home: Login(),
 
     );
   }
@@ -96,10 +96,12 @@ class _MyHomePageState extends State<MyHomePage> {
                      color: Colors.white,
                      fontSize: 15.0,
                    ),),
-                   onPressed: () {},
+                   onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()));
+                   },
                  ),
                ),
-               SizedBox(width: 10.0,),
+               SizedBox(width: 15.0,),
                Expanded(
                  child: RaisedButton(
                    padding: EdgeInsets.all(20.0),
