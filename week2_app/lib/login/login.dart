@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:week2_app/login/Register.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:giffy_dialog/giffy_dialog.dart';
 
 void main() {
   runApp(MyApp());
@@ -112,15 +114,35 @@ class _LoginState extends State<LoginApp> {
                     fontSize: 20,
                   ),
                   ),
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Register()));
+                  onPressed: () {
+                    setState(() {
+                      nusername = username.text;
+                      npassword = password.text;
+                      if (nusername == "admin" &&
+                          npassword == "admin") {
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) {
+                              return Register();
+                            }));
+                      } else {
+                        Fluttertoast.showToast(
+                            msg: "Password / Username Salah",
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.TOP,
+                            backgroundColor: Colors.red,
+                            textColor: Colors.white,
+                            fontSize: 16.0);
+                      }
+                    }
+                    );
+
+                    FlatButton(
+                      onPressed: () {},
+                      child: Text('Not a member? signup now', style: TextStyle(
+                        color: Colors.blueAccent,
+                      ),),);
                   },
                 ),
-                FlatButton(
-                  onPressed: () {},
-                  child: Text('Not a member? signup now', style: TextStyle(
-                    color: Colors.blueAccent,
-                  ),),),
               ],
             ),
           )

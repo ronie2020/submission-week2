@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:week2_app/ageApp.dart';
 import 'package:week2_app/login/login.dart';
+import 'package:week2_app/volumApp.dart';
+import 'package:week2_app/main.dart';
+
 
 class Register extends StatefulWidget {
   @override
@@ -50,7 +54,10 @@ class _HomeState extends State<Register> {
                  ),
                ),
                SizedBox(height: 20.0,),
-               RaisedButton(onPressed: () {},
+               RaisedButton(onPressed: () {
+                 Navigator.pushReplacement(context,
+                     MaterialPageRoute(builder: (context) => AgeApp()));
+               },
                  padding: EdgeInsets.all(2.0),
                  textColor: Colors.white,
                  child: Container(
@@ -72,7 +79,10 @@ class _HomeState extends State<Register> {
                ),
 
                SizedBox(height: 20.0,),
-               RaisedButton(onPressed: () {},
+               RaisedButton(onPressed: () {
+                 Navigator.pushReplacement(context,
+                     MaterialPageRoute(builder: (context) => VolumApp()));
+               },
                    padding: EdgeInsets.all(2.0),
                    textColor: Colors.white,
                    child: Container(
@@ -94,7 +104,10 @@ class _HomeState extends State<Register> {
                ),
 
                SizedBox(height: 20.0,),
-               RaisedButton(onPressed: () {},
+               RaisedButton(
+                 onPressed: () {
+                   Navigator.pop(context);
+                 },
                    padding: EdgeInsets.all(2.0),
                    textColor: Colors.white,
                    child: Container(

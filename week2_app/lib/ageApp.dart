@@ -15,19 +15,7 @@ class _AgeAppState extends State<AgeApp> {
   double age = 0.0;
   var selectedYear;
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-  }
-
-  void _showPicker(){
+   void _showPicker(){
     showDatePicker(context: context,
       firstDate: DateTime(1900), 
       initialDate: DateTime(2020),
@@ -57,16 +45,16 @@ class _AgeAppState extends State<AgeApp> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            OutlineButton(
+            RaisedButton(
               padding: EdgeInsets.all(20),
               child: Text(selectedYear != null ? selectedYear.toString(): 'PIlih Tahun Lahir Anda',
               style: TextStyle(
+                color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
               ),
-              borderSide: BorderSide(color: Colors.blue[900], width: 4.0),
-              color: Colors.white,
+              color: Colors.blue[900],
               onPressed: _showPicker,
             ),
             Padding(

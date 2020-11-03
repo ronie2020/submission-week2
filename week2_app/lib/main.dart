@@ -2,6 +2,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:week2_app/ageApp.dart';
 import 'package:week2_app/login/login.dart';
+import 'package:week2_app/volumApp.dart';
+import 'package:week2_app/login/Register.dart';
 
 void main() {
   runApp(MyApp());
@@ -129,7 +131,10 @@ class _MyHomePageState extends State<MyHomePage> {
                      color: Colors.white,
                      fontSize: 17.0,
                    ),),
-                   onPressed: () {},
+                   onPressed: () {
+                     Navigator.push(context,
+                         MaterialPageRoute(builder: (context) => VolumApp()));
+                   },
                  ),
                ),
              ],
