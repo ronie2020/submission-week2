@@ -93,7 +93,7 @@ class _VolumeState extends State<VolumApp> {
                                           context: context,
                                           builder: (_) => FlareGiffyDialog(
                                             flarePath:
-                                            'assets/space_demo.flr',
+                                            '',
                                             flareAnimation: 'loading',
                                             title: Text(
                                               'Keliling dan Luas Persegi',
@@ -192,7 +192,7 @@ class _VolumeState extends State<VolumApp> {
                                             context: context,
                                             builder: (_) => FlareGiffyDialog(
                                               flarePath:
-                                              'assets/space_demo.flr',
+                                              '',
                                               flareAnimation: 'loading',
                                               title: Text(
                                                 "Keliling dan Luas Persegi Panjang",
@@ -472,7 +472,7 @@ class _VolumeState extends State<VolumApp> {
                                             context: context,
                                             builder: (_) => FlareGiffyDialog(
                                               flarePath:
-                                              'assets/space_demo.flr',
+                                              '',
                                               flareAnimation: 'loading',
                                               title: Text(
                                                 "Keliling dan Luas Segitiga",
