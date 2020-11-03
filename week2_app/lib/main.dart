@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:week2_app/ageApp.dart';
 import 'package:week2_app/login/login.dart';
 
 void main() {
@@ -112,7 +113,10 @@ class _MyHomePageState extends State<MyHomePage> {
                      color: Colors.white,
                      fontSize: 18.0
                    ),),
-                   onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => AgeApp()));
+                    },
                  ),
                ),
                SizedBox(width: 15.0,),
