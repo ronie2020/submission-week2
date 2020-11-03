@@ -12,6 +12,9 @@ class AgeApp extends StatefulWidget {
 }
 class _AgeAppState extends State<AgeApp> {
 
+  double age = 0.0;
+  var selectedYear;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -28,10 +31,21 @@ class _AgeAppState extends State<AgeApp> {
     showDatePicker(context: context,
       firstDate: DateTime(1900), 
       initialDate: DateTime(2020),
-      lastDate: DateTime.now(),
-    );
+      lastDate: DateTime.now()).then ((DateTime dt) {
+      setState(() {
+        selectedYear = dt.year;
+        hitungUmur();
+      }
+      );
+    });
   }
 
+  void hitungUmur() {
+    setState(() {
+      age = (2020 - selectedYear).toDouble();
+    });
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,19 +59,21 @@ class _AgeAppState extends State<AgeApp> {
           children: <Widget>[
             OutlineButton(
               padding: EdgeInsets.all(20),
-              child: Text('Silahkan pilih Tahun lahir Anda', style: TextStyle(
+              child: Text(selectedYear != null ? selectedYear.toString(): 'PIlih Tahun Lahir Anda',
+              style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-              ),),
+              ),
+              ),
               borderSide: BorderSide(color: Colors.blue[900], width: 4.0),
               color: Colors.white,
-              onPressed: () =>(''),
+              onPressed: _showPicker,
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),
             ),
-            Text('Usia Anda Saat ini 30 Tahun', style: TextStyle(
-              fontSize: 20.0, fontWeight: FontWeight.bold,
+            Text('Usia Anda Saat ini ${age.toStringAsFixed(0)}', style: TextStyle(
+              fontSize: 30.0, fontWeight: FontWeight.bold,
             ),),
           ],
         ),
